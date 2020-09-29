@@ -51,14 +51,16 @@ line_items = Table('line_items', metadata, Column('line_items_id', Integer(), pr
                    Column('quantity', Integer()),
                    Column('extended_cost', Numeric(12, 2)))
 
-# 数据库表持久化
-engine = conn.get_engine()
 
-if not engine:
-    print("数据库连接失败！")
-else:
-    try:
-        metadata.create_all(engine)
-        print("重构数据库表完成！")
-    except Exception as err:
-        print("数据库持久化失败，原因：" + str(err))
+if __name__ == "__main__":
+    # 数据库表持久化
+    engine = conn.get_engine()
+
+    if not engine:
+        print("数据库连接失败！")
+    else:
+        try:
+            metadata.create_all(engine)
+            print("重构数据库表完成！")
+        except Exception as err:
+            print("数据库持久化失败，原因：" + str(err))
