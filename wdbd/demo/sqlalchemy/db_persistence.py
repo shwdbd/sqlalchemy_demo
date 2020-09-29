@@ -52,7 +52,7 @@ line_items = Table('line_items', metadata, Column('line_items_id', Integer(), pr
                    Column('extended_cost', Numeric(12, 2)))
 
 
-if __name__ == "__main__":
+def rebuild_database():
     # 数据库表持久化
     engine = conn.get_engine()
 
@@ -64,3 +64,7 @@ if __name__ == "__main__":
             print("重构数据库表完成！")
         except Exception as err:
             print("数据库持久化失败，原因：" + str(err))
+
+
+if __name__ == "__main__":
+    rebuild_database()
