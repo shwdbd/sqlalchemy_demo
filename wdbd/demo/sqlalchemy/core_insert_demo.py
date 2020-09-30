@@ -28,6 +28,9 @@ import wdbd.demo.sqlalchemy.connect_to_mysql as con
 from sqlalchemy import insert
 
 
+# TODO 重复插入同样数据的情况
+
+
 # 使用 table.insert().values模式插入数据
 def table_insert():
     """使用 table.insert().values模式插入数据
